@@ -1,7 +1,8 @@
 import json
 import random
 import re
-import urllib
+import time
+import urllib.request
 from xml.etree import ElementTree
 
 from bs4 import BeautifulSoup
@@ -17,10 +18,10 @@ def get_url_content(url):
     return urllib.request.urlopen(response).read()
 
 
-def get_courses_list(xml_response, quantity=20):
+def get_courses_list(xml_response, course_quantity=20):
     xml_courses = ElementTree.fromstring(xml_response)
     random_courses = [random.choice(xml_courses)[0].text for i
-                      in range(quantity)]
+                      in range(course_quantity)]
     return random_courses
 
 
