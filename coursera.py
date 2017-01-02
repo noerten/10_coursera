@@ -1,7 +1,6 @@
 import json
 import random
 import re
-import time
 import urllib.request
 from xml.etree import ElementTree
 
